@@ -1,0 +1,29 @@
+{
+  "name": "docker-binding",
+  "version": "0.0.8",
+  "description": "a typescript docker remote api wrapper base on got",
+  "main": "index.ts",
+  "dependencies": {
+    "got": "^7.1.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^20.0.2",
+    "@types/node": "^8.0.13",
+    "jest": "^20.0.4",
+    "ts-jest": "^20.0.7",
+    "typescript": "^2.4.1"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "moduleFileExtensions": ["ts", "tsx", "js", "json"],
+    "transform": {
+      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testPathIgnorePatterns": ["<rootDir>/test/spec_helper.ts"],
+    "testMatch": ["**/test/*.(ts|tsx|js)"]
+  },
+  "author": "Dreamacro",
+  "license": "MIT"
+}

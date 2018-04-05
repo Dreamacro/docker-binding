@@ -4,13 +4,13 @@
   "description": "a typescript docker remote api wrapper base on got",
   "main": "index.ts",
   "dependencies": {
-    "got": "^7.1.0"
+    "got": "^8.3.0"
   },
   "devDependencies": {
-    "@types/jest": "^20.0.2",
-    "@types/node": "^8.0.13",
-    "jest": "^20.0.4",
-    "ts-jest": "^20.0.7",
+    "@types/jest": "^22.2.2",
+    "@types/node": "^9.6.2",
+    "jest": "^22.4.3",
+    "ts-jest": "^22.4.2",
     "typescript": "^2.4.1"
   },
   "scripts": {

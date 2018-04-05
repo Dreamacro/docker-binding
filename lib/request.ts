@@ -3,6 +3,7 @@ import { Agent } from 'https'
 import { IncomingMessage } from 'http'
 import * as fs from 'fs'
 import * as path from 'path'
+import * as url from 'url'
 
 import * as got from 'got'
 import { GotOptions, GotResponse, GotPromise } from 'got'
@@ -43,7 +44,7 @@ class Request {
     if (this.socketPath) {
       return path.join(`unix:${this.socketPath}:`, api)
     }
-    return path.join(this.baseURL, api)
+    return url.resolve(this.baseURL, api)
   }
 
   get(path: string, json: boolean = true, option: RequestOptions = {}) {

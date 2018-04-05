@@ -1,4 +1,5 @@
-import { Agent, AgentOptions, IncomingMessage } from 'https'
+import { Agent, AgentOptions } from 'https'
+import { IncomingMessage } from 'http'
 import * as fs from 'fs'
 import * as url from 'url'
 

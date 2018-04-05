@@ -5,6 +5,17 @@
     "lib": [
       "es2016"
     ],
-    "noImplicitAny": true
-  }
+    "outDir": "dist",
+    "declaration": true,
+    "moduleResolution": "node"
+  },
+  "include": [
+    "lib/**/*.ts",
+    "got.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts",
+    "**/*.test.ts"
+  ]
 }

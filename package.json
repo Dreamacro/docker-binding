@@ -2,7 +2,8 @@
   "name": "docker-binding",
   "version": "0.0.8",
   "description": "a typescript docker remote api wrapper base on got",
-  "main": "index.ts",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "dependencies": {
     "got": "^8.3.0"
   },
@@ -14,7 +15,8 @@
     "typescript": "^2.4.1"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",

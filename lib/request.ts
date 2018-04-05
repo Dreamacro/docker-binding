@@ -1,5 +1,6 @@
 import { Readable } from 'stream'
-import { Agent, IncomingMessage } from 'https'
+import { Agent } from 'https'
+import { IncomingMessage } from 'http'
 import * as fs from 'fs'
 import * as path from 'path'
 

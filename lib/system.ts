@@ -20,7 +20,7 @@ export interface Info extends KeyValue {
   KernelVersion: string
   MemTotal: number
   NCPU: number
-  Name: number
+  Name: string
   OperatingSystem: string
   ServerVersion: string
   SystemTime: string

@@ -1,3 +1,5 @@
+import { KeyValue } from './util'
+
 export interface Version {
   Version: string
   Os: string
@@ -9,4 +11,17 @@ export interface Version {
   MinAPIVersion: string
   BuildTime: string
   Experimental: boolean
+}
+
+export interface Info extends KeyValue {
+  Architecture: string
+  Containers: number
+  Images: number
+  KernelVersion: string
+  MemTotal: number
+  NCPU: number
+  Name: number
+  OperatingSystem: string
+  ServerVersion: string
+  SystemTime: string
 }

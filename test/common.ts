@@ -8,3 +8,8 @@ test('can get version', async () => {
   const version = await docker.version()
   expect(version.Version).not.toBeUndefined()
 })
+
+test('can get info', async () => {
+  const info = await docker.info()
+  expect(info.MemTotal).not.toBeUndefined()
+})

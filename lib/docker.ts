@@ -5,7 +5,7 @@ import * as url from 'url'
 
 import Request, { RequestConfig, RequestPromise } from './request'
 import * as util from './util'
-import { Version } from './system'
+import { Version, Info } from './system'
 import {
   Image,
   ImageQuery,
@@ -130,5 +130,9 @@ export default class Docker {
 
   version(): Promise<Version> {
     return this.request.get('/version').then(resp => resp.body as Version)
+  }
+
+  info(): Promise<Info> {
+    return this.request.get('/info').then(resp => resp.body as Info)
   }
 }

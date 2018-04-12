@@ -6,7 +6,7 @@ export interface IImage {
   ParentId: string
   RepoTags: string[]
   RepoDigests: string[]
-  Created: Date
+  Created: number
   Size: number
   VirtualSize: number
   SharedSize: number

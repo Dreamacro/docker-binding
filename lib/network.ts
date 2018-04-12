@@ -4,7 +4,7 @@ import * as util from './util'
 export interface INetwork {
   Name: string
   Id: string
-  Created: Date
+  Created: number
   Scope: string
   Driver: string
   EnableIPv6: boolean

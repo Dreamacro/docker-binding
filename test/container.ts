@@ -1,5 +1,6 @@
 import docker, { IMAGE } from './spec_helper'
 import { Container } from '../lib'
+import { Readable } from 'stream'
 
 let container: Container
 
@@ -21,6 +22,11 @@ test('can get all containers and include alpine', async () => {
 
   expect(containers.length).not.toEqual(0)
   expect(alpine.get('Id')).not.toBeUndefined()
+})
+
+test('get container logs', async () => {
+  const logStream = await container.log()
+  expect(logStream).toBeInstanceOf(Readable)
 })
 
 test('can stop a container', async () => {

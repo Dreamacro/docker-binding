@@ -21,6 +21,7 @@ declare module 'got' {
       followRedirect?: boolean
       decompress?: boolean
       useElectronNet?: boolean
+      stream?: boolean
     }
 
     export function HTTPError(...args: any[]): void

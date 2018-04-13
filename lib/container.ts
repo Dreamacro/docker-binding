@@ -1,6 +1,7 @@
 import * as util from './util'
 import Request, { RequestPromise } from './request'
 import { Exec } from './exec'
+import { Readable } from 'stream';
 
 export interface IContainer {
   Id: string
@@ -89,6 +90,16 @@ export interface IExecBody {
   User?: string
 }
 
+export interface ILogQuery {
+  follow?: boolean
+  stdout?: boolean
+  stderr?: boolean
+  since?: number
+  until?: number
+  timestamps?: boolean
+  tail?: string
+}
+
 export class Container {
   constructor(readonly id: string, readonly request: Request) {}
 
@@ -139,6 +150,15 @@ export class Container {
     return (this.request.post(u, opt) as RequestPromise).then(
       resp => new Exec(resp.body.Id, this.request)
     )
+  }
+
+  log(opt: ILogQuery = {
+    follow: true,
+    stdout: true,
+    stderr: true
+  }): Promise<any> {
+    const u = util.genURL(`/containers/${this.id}/logs`, opt)
+    return this.request.get(u, false, { stream: true })
   }
 }
 

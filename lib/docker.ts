@@ -36,7 +36,7 @@ export default class Docker {
     return this.request
       .get(u)
       .then(resp =>
-        (resp.body as IImage[]).map(i => new MacroImage(i, this.request))
+        (resp.body as IImage[] || []).map(i => new MacroImage(i, this.request))
       )
   }
 
@@ -49,7 +49,7 @@ export default class Docker {
     return this.request
       .get(u)
       .then(resp =>
-        (resp.body as IContainer[]).map(
+        (resp.body as IContainer[] || []).map(
           c => new MacroContainer(c, this.request)
         )
       )
@@ -64,7 +64,7 @@ export default class Docker {
     return this.request
       .get(u)
       .then(resp =>
-        (resp.body as INetwork[]).map(n => new MacroNetwork(n, this.request))
+        (resp.body as INetwork[] || []).map(n => new MacroNetwork(n, this.request))
       )
   }
 
@@ -77,7 +77,7 @@ export default class Docker {
     return this.request
       .get(u)
       .then(resp =>
-        (resp.body.Volumes as IVolume[]).map(
+        (resp.body.Volumes as IVolume[] || []).map(
           n => new MacroVolume(n, this.request)
         )
       )
